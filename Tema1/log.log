@@ -1,0 +1,148 @@
+INFO:root:Accessing Neutrino API for ip 91.199.104.244...
+INFO:root:Accessing Neutrino API for ip 91.199.104.244...
+INFO:root:Got city: Bucharest, latitude: 44.432251, longitude: 26.106260 for ip: 91.199.104.244
+INFO:root:Accessing weather API for lat 44.432251, lng 26.106260 for 5 days...
+INFO:root:Accessing Google Places API for city: Bucharest
+INFO:root:Accessing Google Geolocation API for city: Bucharesti
+INFO:root:Got id: ChIJT608vzr5sUARKKacfOMyBqw for city: Bucharest
+INFO:root:Opening browser for Bucharest's map
+INFO:cherrypy.error:[28/Feb/2018:12:47:18] ENGINE Listening for SIGTERM.
+INFO:cherrypy.error:[28/Feb/2018:12:47:18] ENGINE Bus STARTING
+ERROR:cherrypy.error:[28/Feb/2018:12:47:18] ENGINE Set handler for console events.
+INFO:cherrypy.error:[28/Feb/2018:12:47:18] ENGINE Started monitor thread 'Autoreloader'.
+ERROR:cherrypy.error:[28/Feb/2018:12:47:19] ENGINE Error in 'start' listener <bound method Server.start of <cherrypy._cpserver.Server object at 0x060C44B0>>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\cherrypy\process\wspbus.py", line 230, in publish
+    output.append(listener(*args, **kwargs))
+  File "C:\Python27\lib\site-packages\cherrypy\_cpserver.py", line 173, in start
+    super(Server, self).start()
+  File "C:\Python27\lib\site-packages\cherrypy\process\servers.py", line 177, in start
+    portend.free(*self.bind_addr, timeout=Timeouts.free)
+  File "C:\Python27\lib\site-packages\portend.py", line 119, in free
+    raise Timeout("Port {port} not free on {host}.".format(**locals()))
+Timeout: Port 8080 not free on 127.0.0.1.
+
+ERROR:cherrypy.error:[28/Feb/2018:12:47:19] ENGINE Shutting down due to error in start listener:
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\cherrypy\process\wspbus.py", line 268, in start
+    self.publish('start')
+  File "C:\Python27\lib\site-packages\cherrypy\process\wspbus.py", line 248, in publish
+    raise exc
+ChannelFailures: Timeout('Port 8080 not free on 127.0.0.1.',)
+
+INFO:cherrypy.error:[28/Feb/2018:12:47:19] ENGINE Bus STOPPING
+INFO:cherrypy.error:[28/Feb/2018:12:47:19] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('127.0.0.1', 8080)) already shut down
+INFO:cherrypy.error:[28/Feb/2018:12:47:19] ENGINE Stopped thread 'Autoreloader'.
+ERROR:cherrypy.error:[28/Feb/2018:12:47:19] ENGINE Removed handler for console events.
+INFO:cherrypy.error:[28/Feb/2018:12:47:19] ENGINE Bus STOPPED
+INFO:cherrypy.error:[28/Feb/2018:12:47:19] ENGINE Bus EXITING
+INFO:cherrypy.error:[28/Feb/2018:12:47:19] ENGINE Bus EXITED
+INFO:cherrypy.error:[28/Feb/2018:12:47:44] ENGINE Listening for SIGTERM.
+INFO:cherrypy.error:[28/Feb/2018:12:47:44] ENGINE Bus STARTING
+ERROR:cherrypy.error:[28/Feb/2018:12:47:44] ENGINE Set handler for console events.
+INFO:cherrypy.error:[28/Feb/2018:12:47:44] ENGINE Started monitor thread 'Autoreloader'.
+ERROR:cherrypy.error:[28/Feb/2018:12:47:45] ENGINE Error in 'start' listener <bound method Server.start of <cherrypy._cpserver.Server object at 0x058074B0>>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\cherrypy\process\wspbus.py", line 230, in publish
+    output.append(listener(*args, **kwargs))
+  File "C:\Python27\lib\site-packages\cherrypy\_cpserver.py", line 173, in start
+    super(Server, self).start()
+  File "C:\Python27\lib\site-packages\cherrypy\process\servers.py", line 177, in start
+    portend.free(*self.bind_addr, timeout=Timeouts.free)
+  File "C:\Python27\lib\site-packages\portend.py", line 119, in free
+    raise Timeout("Port {port} not free on {host}.".format(**locals()))
+Timeout: Port 8080 not free on 127.0.0.1.
+
+ERROR:cherrypy.error:[28/Feb/2018:12:47:45] ENGINE Shutting down due to error in start listener:
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\cherrypy\process\wspbus.py", line 268, in start
+    self.publish('start')
+  File "C:\Python27\lib\site-packages\cherrypy\process\wspbus.py", line 248, in publish
+    raise exc
+ChannelFailures: Timeout('Port 8080 not free on 127.0.0.1.',)
+
+INFO:cherrypy.error:[28/Feb/2018:12:47:45] ENGINE Bus STOPPING
+INFO:cherrypy.error:[28/Feb/2018:12:47:45] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('127.0.0.1', 8080)) already shut down
+INFO:cherrypy.error:[28/Feb/2018:12:47:45] ENGINE Stopped thread 'Autoreloader'.
+ERROR:cherrypy.error:[28/Feb/2018:12:47:45] ENGINE Removed handler for console events.
+INFO:cherrypy.error:[28/Feb/2018:12:47:45] ENGINE Bus STOPPED
+INFO:cherrypy.error:[28/Feb/2018:12:47:45] ENGINE Bus EXITING
+INFO:cherrypy.error:[28/Feb/2018:12:47:45] ENGINE Bus EXITED
+INFO:cherrypy.error:[28/Feb/2018:12:48:03] ENGINE Listening for SIGTERM.
+INFO:cherrypy.error:[28/Feb/2018:12:48:03] ENGINE Bus STARTING
+ERROR:cherrypy.error:[28/Feb/2018:12:48:03] ENGINE Set handler for console events.
+INFO:cherrypy.error:[28/Feb/2018:12:48:03] ENGINE Started monitor thread 'Autoreloader'.
+ERROR:cherrypy.error:[28/Feb/2018:12:48:04] ENGINE Error in 'start' listener <bound method Server.start of <cherrypy._cpserver.Server object at 0x05D42490>>
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\cherrypy\process\wspbus.py", line 230, in publish
+    output.append(listener(*args, **kwargs))
+  File "C:\Python27\lib\site-packages\cherrypy\_cpserver.py", line 173, in start
+    super(Server, self).start()
+  File "C:\Python27\lib\site-packages\cherrypy\process\servers.py", line 177, in start
+    portend.free(*self.bind_addr, timeout=Timeouts.free)
+  File "C:\Python27\lib\site-packages\portend.py", line 119, in free
+    raise Timeout("Port {port} not free on {host}.".format(**locals()))
+Timeout: Port 8080 not free on 127.0.0.1.
+
+ERROR:cherrypy.error:[28/Feb/2018:12:48:04] ENGINE Shutting down due to error in start listener:
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\cherrypy\process\wspbus.py", line 268, in start
+    self.publish('start')
+  File "C:\Python27\lib\site-packages\cherrypy\process\wspbus.py", line 248, in publish
+    raise exc
+ChannelFailures: Timeout('Port 8080 not free on 127.0.0.1.',)
+
+INFO:cherrypy.error:[28/Feb/2018:12:48:04] ENGINE Bus STOPPING
+INFO:cherrypy.error:[28/Feb/2018:12:48:04] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('127.0.0.1', 8080)) already shut down
+INFO:cherrypy.error:[28/Feb/2018:12:48:04] ENGINE Stopped thread 'Autoreloader'.
+ERROR:cherrypy.error:[28/Feb/2018:12:48:04] ENGINE Removed handler for console events.
+INFO:cherrypy.error:[28/Feb/2018:12:48:04] ENGINE Bus STOPPED
+INFO:cherrypy.error:[28/Feb/2018:12:48:04] ENGINE Bus EXITING
+INFO:cherrypy.error:[28/Feb/2018:12:48:04] ENGINE Bus EXITED
+INFO:cherrypy.error:[28/Feb/2018:12:49:28] ENGINE Listening for SIGTERM.
+INFO:cherrypy.error:[28/Feb/2018:12:49:28] ENGINE Bus STARTING
+ERROR:cherrypy.error:[28/Feb/2018:12:49:28] ENGINE Set handler for console events.
+INFO:cherrypy.error:[28/Feb/2018:12:49:28] ENGINE Started monitor thread 'Autoreloader'.
+INFO:cherrypy.error:[28/Feb/2018:12:49:28] ENGINE Serving on http://127.0.0.1:10000
+INFO:cherrypy.error:[28/Feb/2018:12:49:28] ENGINE Bus STARTED
+INFO:cherrypy.access.95928720:127.0.0.1 - - [28/Feb/2018:12:49:31] "GET / HTTP/1.1" 200 11 "" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36"
+INFO:cherrypy.access.95928720:127.0.0.1 - - [28/Feb/2018:12:49:31] "GET /favicon.ico HTTP/1.1" 200 1406 "http://127.0.0.1:10000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36"
+INFO:root:Accessing Neutrino API for ip 93.122.249.233...
+INFO:root:Got city: Bucharest, latitude: 44.432251, longitude: 26.106260 for ip: 93.122.249.233
+INFO:root:Accessing weather API for lat 44.432251, lng 26.106260 for 5 days...
+INFO:root:Accessing Google Places API for city: Bucharest
+INFO:root:Accessing Google Geolocation API for city: Bucharest
+INFO:root:Got id: ChIJT608vzr5sUARKKacfOMyBqw for city: Bucharest
+INFO:root:Opening browser for Bucharest's map
+INFO:root:Accessing Neutrino API for ip 93.122.249.233...
+INFO:root:Got city: Bucharest, latitude: 44.432251, longitude: 26.106260 for ip: 93.122.249.233
+INFO:root:Accessing weather API for lat 44.432251, lng 26.106260 for 5 days...
+INFO:root:Accessing Google Places API for city: Bucharest
+INFO:root:Accessing Google Geolocation API for city: Bucharest
+INFO:root:Got id: ChIJT608vzr5sUARKKacfOMyBqw for city: Bucharest
+INFO:root:Opening browser for Bucharest's map
+INFO:root:Accessing Neutrino API for ip 93.122.249.233...
+INFO:root:Got city: Bucharest, latitude: 44.432251, longitude: 26.106260 for ip: 93.122.249.233
+INFO:root:Accessing weather API for lat 44.432251, lng 26.106260 for 5 days...
+INFO:root:Accessing Google Places API for city: Bucharest
+INFO:root:Accessing Google Geolocation API for city: Bucharest
+INFO:root:Got id: ChIJT608vzr5sUARKKacfOMyBqw for city: Bucharest
+INFO:root:Opening browser for Bucharest's map
+INFO:root:Accessing Neutrino API for ip 93.122.249.233...
+INFO:root:Accessing Neutrino API for ip 93.122.249.233...
+INFO:root:Got city: Bucharest, latitude: 44.432251, longitude: 26.106260 for ip: 93.122.249.233
+INFO:root:Accessing weather API for lat 44.432251, lng 26.106260 for 5 days...
+INFO:root:Accessing Neutrino API for ip 93.122.249.233...
+INFO:root:Got city: Bucharest, latitude: 44.432251, longitude: 26.106260 for ip: 93.122.249.233
+INFO:root:Accessing weather API for lat 44.432251, lng 26.106260 for 5 days...
+INFO:root:Accessing Google Places API for city: Bucharest
+INFO:root:Accessing Google Geolocation API for city: Bucharest
+INFO:root: Got id: ChIJT608vzr5sUARKKacfOMyBqw for city: Bucharest
+INFO:root:Opening browser for Bucharest's map
+INFO:root:Accessing Neutrino API for ip 93.122.249.233...
+INFO:root:Got city: Bucharest, latitude: 44.432251, longitude: 26.106260 for ip: 93.122.249.233
+INFO:root:Accessing weather API for lat 44.432251, lng 26.106260 for 5 days...
+INFO:root:Accessing Google Places API for city: Bucharest
+INFO:root:Accessing Google Geolocation API for city: Bucharest
+INFO:root: Got id: ChIJT608vzr5sUARKKacfOMyBqw for city: Bucharest
+INFO:root:Opening browser for Bucharest's map
