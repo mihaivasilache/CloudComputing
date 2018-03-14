@@ -1,0 +1,28 @@
+PUT
+    ->  entire collection (if you want to replace another collection just put table=table_name)
+    {
+        "replace_table_name": "movie",
+        "items": [
+            {
+                "id": "Movie 1",
+                "date": "12-12-2017",
+                "rating": 4
+            },
+            {
+                "id": "Movie ",
+                "date": "12-12-2018",
+                "rating": 2
+            }
+        ]
+    }
+    ->  if replace_table_name does not exist it will return a error because it needs to know with
+        what name it should replace the collection
+    ->  item (in this case you must give the collection name and the id as parameters)
+    {
+        "items": [
+            {
+                "date": "12-12-2017",
+                "rating":
+            }
+        ]
+    }

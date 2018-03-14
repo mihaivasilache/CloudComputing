@@ -222,7 +222,7 @@ class MyHttpRequestHandler(http.server.BaseHTTPRequestHandler):
                         raise
                     return
             elif ['rating', 'table'] == sorted(list(url_params.keys())):
-                query = '''select id, rating from %s where rating >= %f''' \
+                query = '''select * from %s where rating >= %f''' \
                         % (url_params['table'], float(url_params['rating']))
                 try:
                     self.send_result(query)
@@ -284,8 +284,8 @@ class MyHttpRequestHandler(http.server.BaseHTTPRequestHandler):
                         raise
                     return
             else:
-                self.send_response(HTTPStatus.BAD_REQUEST)
-                self.send_error(HTTPStatus.BAD_REQUEST)
+                self.send_response(HTTPStatus.BAD_REQUEST, 'Incorrect parameters!')
+                self.send_error(HTTPStatus.BAD_REQUEST, 'Incorrect parameters!')
                 return
         except Exception as e:
             print(e)
@@ -302,7 +302,6 @@ class MyHttpRequestHandler(http.server.BaseHTTPRequestHandler):
                 if e.__str__() != '':
                     raise
                 return
-
             if ['table'] == sorted(list(url_params.keys())):
                 try:
                     content_json = self.load_rfile_json_post(['id', 'date', 'rating'])
@@ -360,7 +359,7 @@ class MyHttpRequestHandler(http.server.BaseHTTPRequestHandler):
                         raise
                     return
             elif ['rating', 'table'] == sorted(list(url_params.keys())):
-                query = '''select id, rating from %s where rating >= %f''' \
+                query = '''select * from %s where rating >= %f''' \
                         % (url_params['table'], float(url_params['rating']))
                 try:
                     self.send_result(query)
@@ -422,8 +421,8 @@ class MyHttpRequestHandler(http.server.BaseHTTPRequestHandler):
                         raise
                     return
             else:
-                self.send_response(HTTPStatus.BAD_REQUEST)
-                self.send_error(HTTPStatus.BAD_REQUEST)
+                self.send_response(HTTPStatus.BAD_REQUEST, 'Incorrect parameters!')
+                self.send_error(HTTPStatus.BAD_REQUEST, 'Incorrect parameters!')
                 return
         except Exception as e:
             print(e)
@@ -440,7 +439,6 @@ class MyHttpRequestHandler(http.server.BaseHTTPRequestHandler):
                 if e.__str__() != '':
                     raise
                 return
-
             if len(list(url_params.keys())) == 0:
                 try:
                     content_json = self.load_rfile_json_put(['replace_table_name', 'items'], ['id', 'date', 'rating'])
@@ -646,10 +644,9 @@ class MyHttpRequestHandler(http.server.BaseHTTPRequestHandler):
                         raise
                     return
             else:
-                self.send_response(HTTPStatus.BAD_REQUEST)
-                self.send_error(HTTPStatus.BAD_REQUEST)
+                self.send_response(HTTPStatus.BAD_REQUEST, 'Incorrect parameters!')
+                self.send_error(HTTPStatus.BAD_REQUEST, 'Incorrect parameters!')
                 return
-
         except:
             self.send_response(HTTPStatus.INTERNAL_SERVER_ERROR)
             self.send_error(HTTPStatus.INTERNAL_SERVER_ERROR)
@@ -747,8 +744,8 @@ class MyHttpRequestHandler(http.server.BaseHTTPRequestHandler):
                         raise
                     return
             else:
-                self.send_response(HTTPStatus.BAD_REQUEST)
-                self.send_error(HTTPStatus.BAD_REQUEST)
+                self.send_response(HTTPStatus.BAD_REQUEST, 'Incorrect parameters!')
+                self.send_error(HTTPStatus.BAD_REQUEST, 'Incorrect parameters!')
                 return
         except Exception as e:
             print(e)
