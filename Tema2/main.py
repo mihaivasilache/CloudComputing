@@ -26,7 +26,7 @@ class MyHttpRequestHandler(http.server.BaseHTTPRequestHandler):
     def send_error(self, code, message='', explain=''):
         message = message.replace("'", '').replace('"', '')
         content = ({
-            'code': str(code.value),
+            'status': str(code.value),
             'message': html.escape(message, quote=False),
             'explain': explain
         })
@@ -37,7 +37,7 @@ class MyHttpRequestHandler(http.server.BaseHTTPRequestHandler):
 
         self.wfile.write(body)
 
-    def send_result(self, query, should_respond=True, commit=True, return_results=False):
+    def send_result(self, query, should_respond=True, commit=True, is_get=False):
         try:
             db_result = db_conn.execute(query)
             if commit:
@@ -58,6 +58,12 @@ class MyHttpRequestHandler(http.server.BaseHTTPRequestHandler):
                         else:
                             result['results'] += [str(item[0])]
 
+                result['status'] = str(HTTPStatus.OK.value)
+                if is_get:
+                    if len(result['results']) == 0:
+                        self.send_response(HTTPStatus.NOT_FOUND)
+                        self.send_error(HTTPStatus.NOT_FOUND)
+                        return
                 body = html.escape(str(result).replace("'", '"'), quote=False)
                 body = body.encode('UTF-8')
                 self.send_response(HTTPStatus.OK)
@@ -65,22 +71,6 @@ class MyHttpRequestHandler(http.server.BaseHTTPRequestHandler):
                 self.send_header("Content-Length", len(body))
                 self.end_headers()
                 self.wfile.write(body)
-            if return_results:
-                db_result = db_result.fetchall()
-                result = dict()
-                result['results'] = list()
-                if len(db_result) == 1:
-                    if len(db_result[0]) > 1:
-                        result['results'] = [[j for j in i if str(j) != ''] for i in db_result]
-                    else:
-                        result['results'] = [str(db_result[0][0])]
-                else:
-                    for item in db_result:
-                        if len(item) > 1:
-                            result['results'] += [[i for i in item]]
-                        else:
-                            result['results'] += [str(item[0])]
-                return result
         except sqlite3.OperationalError as e:
             print(e)
             self.send_response(HTTPStatus.NOT_FOUND, e.__str__())
@@ -215,7 +205,7 @@ class MyHttpRequestHandler(http.server.BaseHTTPRequestHandler):
                 query = '''select * from %s where id like "%s"''' \
                         % (url_params['table'], url_params['id'])
                 try:
-                    self.send_result(query)
+                    self.send_result(query, is_get=True)
                 except Exception as e:
                     print('Error', e)
                     if e.__str__() != '':
@@ -225,7 +215,7 @@ class MyHttpRequestHandler(http.server.BaseHTTPRequestHandler):
                 query = '''select * from %s where rating >= %f''' \
                         % (url_params['table'], float(url_params['rating']))
                 try:
-                    self.send_result(query)
+                    self.send_result(query, is_get=True)
                 except Exception as e:
                     print('Error', e)
                     if e.__str__() != '':
@@ -236,7 +226,7 @@ class MyHttpRequestHandler(http.server.BaseHTTPRequestHandler):
                         % (url_params['table'], url_params['id'],
                            float(url_params['rating']))
                 try:
-                    self.send_result(query)
+                    self.send_result(query, is_get=True)
                 except Exception as e:
                     print('Error', e)
                     if e.__str__() != '':
@@ -246,7 +236,7 @@ class MyHttpRequestHandler(http.server.BaseHTTPRequestHandler):
                 query = '''select * from %s where date >= "%s"''' \
                         % (url_params['table'], url_params['date'])
                 try:
-                    self.send_result(query)
+                    self.send_result(query, is_get=True)
                 except Exception as e:
                     print('Error', e)
                     if e.__str__() != '':
@@ -256,7 +246,7 @@ class MyHttpRequestHandler(http.server.BaseHTTPRequestHandler):
                 query = '''select * from %s where date >= "%s" and rating >= %f''' \
                         % (url_params['table'], url_params['date'], float(url_params['rating']))
                 try:
-                    self.send_result(query)
+                    self.send_result(query, is_get=True)
                 except Exception as e:
                     print('Error', e)
                     if e.__str__() != '':
@@ -266,7 +256,7 @@ class MyHttpRequestHandler(http.server.BaseHTTPRequestHandler):
                 query = '''select * from %s where date = "%s" and id = "%s"''' \
                         % (url_params['table'], url_params['date'], url_params['id'])
                 try:
-                    self.send_result(query)
+                    self.send_result(query, is_get=True)
                 except Exception as e:
                     print('Error', e)
                     if e.__str__() != '':
@@ -277,7 +267,7 @@ class MyHttpRequestHandler(http.server.BaseHTTPRequestHandler):
                         % (url_params['table'], url_params['date'], float(url_params['rating']),
                            url_params['id'])
                 try:
-                    self.send_result(query)
+                    self.send_result(query, is_get=True)
                 except Exception as e:
                     print('Error', e)
                     if e.__str__() != '':
