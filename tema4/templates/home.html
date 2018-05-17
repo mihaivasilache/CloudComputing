@@ -1,0 +1,57 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="static/style.css" type="text/css">
+
+{% block body %}
+
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="alert alert-success" role="alert">
+                {{ messages[0] }}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <div class="login-screen">
+
+        <ul>
+            {% for file in files %}
+                <li>
+                    <h4 style="display:inline-block;">{{ file }}</h4>
+                    <form style="display:inline-block;" action="{{ url_for('delete') }}" method="POST" class="delete">
+                        <input type=hidden value="{{ file }}" name="file_to_delete"></input>
+                        <input type=submit value="Delete" style="height:40px; width:60px"></input>
+                    </form>
+                    <form style="display:inline-block;" action="{{ url_for('download') }}" method="POST"
+                          class="download">
+                        <input type=hidden value="{{ file }}" name="file_to_download"></input>
+                        <input type=submit value="Download" style="height:40px; width:80px"></input>
+                    </form>
+                    <form style="display:inline-block;" action="{{ url_for('execute_python') }}" method="POST"
+                          class="execute_python">
+                        <input type=hidden value="{{ file }}" name="file_to_execute"></input>
+                        <input type=submit value="Execute Python script" style="height:40px; width:170px"></input>
+                    </form>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <div class="app-title">
+            <h1>Upload file</h1>
+        </div>
+
+
+        <div class="form-control-file">
+            <form action="/upload" method="POST" enctype="multipart/form-data">
+                <input type="file" name="file" class="form-control-file" style="margin: 0 auto">
+                <input type="submit" value="Submit" class="btn btn-primary btn-large">
+            </form>
+        </div>
+        <div style="text-align: center">
+            <a href='/logout' >Logout</a>
+        </div>
+    </div>
+
+
+
+{% endblock %}

@@ -1,0 +1,41 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="static/style.css" type="text/css">
+{% block body %}
+    {% if session['logged_in'] %}
+        <p>You already have an account!</p>
+    {% else %}
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="alert alert-danger">
+                    {{ messages[0] }}
+                </div>
+            {% endif %}
+        {% endwith %}
+        <form action="/signupadd" method="POST">
+            <div class="login">
+                <div class="login-screen">
+                    <div class="app-title">
+                        <h1>Sign up</h1>
+                    </div>
+
+                    <div class="login-form">
+                        <div class="control-group">
+                            <input type="text" class="login-field" value="" placeholder="username" name="username">
+                            <label class="login-field-icon fui-user" for="signup-name"></label>
+                        </div>
+
+                        <div class="control-group">
+                            <input type="password" class="login-field" value="" placeholder="password" name="password">
+                            <label class="login-field-icon fui-lock" for="signup-pass"></label>
+                        </div>
+
+                        <input type="submit" value="Sign up" class="btn btn-primary btn-large btn-block">
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <a href="/" class="btn btn-primary btn-large btn-block" role="button">Back to log in</a>
+
+    {% endif %}
+{% endblock %}
