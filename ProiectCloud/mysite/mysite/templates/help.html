@@ -1,0 +1,131 @@
+    {% extends 'base.html' %}
+
+    {% block title %}Help{% endblock %}
+    
+        {% block content %}
+        <style>
+  
+          body {
+              position: relative;
+          }
+          ul.nav-pills {
+              top: 400px;
+              position: fixed;
+          }
+          div.col-sm-9 div {
+              height: 300px;
+              font-size: 20px;
+              margin-left: 40px;
+              margin-right: 40px;
+          }
+          p {
+             font-size: 70%;
+             margin-left: 40px;
+             margin-right: 40px;
+          }
+
+         lis {
+             display: list-item;
+             font-size: 90%;
+             margin-left: 60px;
+             margin-right: 40px;
+         }
+
+          .my-tag {
+            color: #ffffff;
+            background-color: #00004c;
+          }
+
+          div {
+               text-align: justify;
+               text-justify: inter-word;
+          }
+
+          #Login {color: #00004c; background-color: #bce8f1;}
+          #Tweets {color: #00004c; background-color: #bce8f1;}
+          #Sentiment Analysis {color: #00004c; background-color: #bce8f1;}
+          #Github {color: #00004c; background-color: #bce8f1;}
+          #Malware Analysis {color: #00004c; background-color: #bce8f1;}
+
+          
+          @media screen and (max-width: 810px) {
+            #login, #tweets, #sentiment_analysis, #github, #malware_analysis {
+                margin-left: 150px;
+            }
+          }
+        </style>
+                   
+            <div class="container">
+                <div class="row">
+		     <div data-spy="scroll" data-target="#myScrollspy">
+                        <nav class="col-sm-3" id="myScrollspy">
+                            <ul class="nav nav-pills nav-stacked bg-faded">
+                                <li class="active"><a href="#login">Login</a></li>
+                                <li><a class = "my-tag" href="#tweets">Tweets</a></li>
+                                <li><a class = "my-tag" href="#sentiment_analysis">Sentiment Analysis</a></li>
+                                <li><a class = "my-tag" href="#github">Github</a></li>
+                                <li><a class = "my-tag" href="#malware_analysis">Malware Analysis</a></li>
+                            </ul>
+                        </nav>
+            
+                   
+		         <div class="col-sm-9" style="width: 700px" id="mysections">
+		             <div id="homebox" style="margin: 50px auto;" class="mainbox col-md-40 col-md-offset-3 col-sm-40 col-sm-offset-6">                    
+                                <div class="panel panel-info" style="height:3000px; border-color:#00004c">
+                                    <div class="panel-heading" style="height:40px; width:100%; margin-left: 0px; margin-right: 0px; background-color:#00004c; color:#ffffff">Help</div>
+
+
+				    <div id="introduction" style="height:4%"> 
+                                        <p></p>
+                                        <center><b>Welcome!</b></center>
+                                        <p></p>
+                                        <p>This application is meant to investigate the relation between the behaviour of users on social media and their tendency of spreading malware.</p>
+                    		    </div>
+				
+	               
+                    <div id="login" style="height:7%; background-color: #bce8f1">
+                        <p></p>         
+                        <center><b>Log in</b></center>
+                        <p></p>
+                        <p>You need to be authenticated in order to use this service. If you do not have an account, you can create one or log in through your Google Account.</p>
+                    </div>
+
+                    <div id="tweets" style="height:7%; background-color: #bce8f1"> 
+                        <p></p>        
+                        <center><b>Tweets</b></center>
+                        <p></p>
+                        <p>You can search the last tweets of a user, based on his or her account name.</p>
+                    </div>
+
+        	         <div id="sentiment_analysis" style="height:7%; background-color: #bce8f1">         
+                        <p></p>
+                        <center><b>Sentiment Analysis</b></center>
+                        <p></p>
+                        <p>The service provides you with the facility of making sentiment analysis on the tweets identified through the above search.</p>
+                    </div>
+
+                    <div id="github" style="height:7%; background-color: #bce8f1">         
+                        <p></p>
+                        <center><b>Github</b></center>
+                        <p></p>
+                        <p>You can download the source code from a repository on Github, given the account name.</p>
+                    </div>
+
+                    <div id="malware_analysis" style="height:7%; background-color: #bce8f1">         
+                        <p></p>
+                        <center><b>Malware Analysis</b></center>
+                        <p></p>
+                        <p>The service provides you with the possibility of making a malware analysis of the downloaded source code. Now, is there a relation between the behaviour of the user on the social media and his tendency of spreading malware on Github? </p>
+                    </div>
+
+                    <p></p>
+                    <p></p>
+                    <a href="/" class="btn btn-primary col-lg-3" style="white-space:normal; margin-left: 220px; margin-right: 40px; background-color:#00004c; color:#ffffff">Return home</a>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

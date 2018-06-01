@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+	{% block title %}Sign up{% endblock %}
+
+        {% block content %}    
+          <div id="signupbox" style="margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                    <div class="panel panel-info" style="border-color:#00004c">
+                        <div class="panel-heading" style="background-color:#00004c; color:#ffffff">
+                            <div class="panel-title">SIGN UP</div>
+                            <div style="float:right; font-size: 80%; position: relative; top:-10px">
+				<a href="/" style="color:#ffffff">Home</a>
+                      	    </div>
+                        </div>  
+                        <div class="panel-body" >
+                            <form id="signupform" class="form-horizontal" role="form" action="/signup" method="post">
+                                
+                                <div id="signupalert" style="display:none" class="alert alert-danger">
+                                    <p>Error:</p>
+                                    <span></span>
+                                </div>
+ 	                                   {% csrf_token %}
+ 					   {{ form.as_p }}
+   					  <center><button type="submit" style="background-color:#00004c; color:#ffffff">Sign up</button></center>
+                             </form>
+
+                         </div>
+                    </div>
+           </div> 
+ 	{% endblock %}

@@ -1,0 +1,27 @@
+	{% extends 'base.html' %}
+
+	{% block title %}Logout{% endblock %}
+	
+        {% block content %}    
+        <div id="logoutbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
+            <div class="panel panel-info" style="border-color:#00004c">
+
+                    <div class="panel-heading" style="background-color:#00004c; color:#ffffff">
+                        <div class="panel-title">Sign In</div>
+                        <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="/login_page">Login Page</a></div>
+                    </div> 
+                        
+                        <div style="padding-top:30px" class="panel-body" >
+
+                        <div style="display:none" id="logout-alert" class="alert alert-danger col-sm-12"></div>
+
+                        <form id="logoutform" class="form-horizontal" role="form" action="/logout" method="post">
+                            
+                            <center>You have just been logged out!</center>
+			                    
+                        </form>     
+                        
+                        </div>                     
+            </div>  
+        </div>
+	{% endblock %}        

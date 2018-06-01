@@ -1,0 +1,51 @@
+
+	{% extends 'base.html' %}  
+	{% block title %}Home{% endblock %}
+	
+        {% block content %}    
+        <div id="homebox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
+            <div class="panel panel-info" style="border-color:#00004c">
+
+                    <div class="panel-heading" style="background-color:#00004c; color:#ffffff">
+		       <div class="panel-title">USERS PROFILING</div>
+                        {% if not user or user.is_anonymous %}
+			<div style="float:right; font-size: 80%; position: relative; top:-10px">
+				<a href="/signup" style="color:#ffffff">Sign up</a>
+                      	</div>
+			{% endif %}
+                    </div> 
+                        
+                        <div style="padding-top:30px" class="panel-body" >
+
+                        <div style="display:none" id="home-alert" class="alert alert-danger col-sm-12"></div>
+
+                        <p> 
+                          			    
+                            {% if user and not user.is_anonymous %}
+                               <center>Hello, {{ user }}!</center>
+                            <br><center><div class="btn-group">			
+			         <a href="{% url 'polls:auth:logout' %}?next=/logout" class="btn btn-primary" style ="background-color:#00004c; color:#ffffff">Logout</a> 
+                                 <button type="button" class="btn btn-primary" onclick="location.href='myaccount'" style ="background-color:#00004c; color:#ffffff"> My account </button>   
+                             </div></center></br>
+     				
+                            {% else %}
+                            <center>   Hi there, stranger! </center>
+			    <p></p>
+			    <center> 
+ 				 <div class="btn-group">
+					<button type="button" class="btn btn-primary" onclick="location.href='help'" style ="background-color:#00004c; color:#ffffff"> Help </button> 
+                                       	<button type="button" class="btn btn-primary" onclick="location.href='login_page'" style ="background-color:#00004c; color:#ffffff"> Login </button>   
+  				 </div>
+
+                            </center>		
+                            {% endif %}
+                                
+                        </p>     
+                        
+                        </div>                     
+            </div>  
+        </div>
+	{% endblock %}
+
+
+

@@ -1,0 +1,9 @@
+Django
+gunicorn
+twitter
+social-auth-app-django
+python-twitter
+azure-storage-file
+textblob
+urlextract
+tweepy

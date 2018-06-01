@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<!--
+
+-->
+{% load static %}
+
+<html>
+	<head>
+        <!--<base href="/~adrian.piriu/lettredemotivation/">-->
+		<title>Login</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+        <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
+
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.9/js/dataTables.bootstrap.min.js"></script>
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css">
+
+        <style type="text/css">
+            
+            body {                
+                background-image: url({% static "images/background.png" %});
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;       
+            }
+             
+        </style>
+
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+            
+
+	</head>
+
+	<body class>
+
+    	<script>
+      	window.fbAsyncInit = function() {
+       	 FB.init({
+         	 appId      : '1856496534625387',
+          	xfbml      : true,
+         	 version    : 'v2.9'
+        	});
+        	FB.AppEvents.logPageView();
+      	};
+
+      	(function(d, s, id){
+        	 var js, fjs = d.getElementsByTagName(s)[0];
+         	if (d.getElementById(id)) {return;}
+         	js = d.createElement(s); js.id = id;
+         	js.src = "//connect.facebook.net/en_US/sdk.js";
+         	fjs.parentNode.insertBefore(js, fjs);
+       	}(document, 'script', 'facebook-jssdk'));
+    	</script>
+
+	    <div class="container-fluid container">
+
+            {% block content %}
+            {% endblock %}
+
+	    </div>    
+	</body>
+
+    <script>
+    $("[data-toggle='modal']").modal();
+    </script>
+
+</html>

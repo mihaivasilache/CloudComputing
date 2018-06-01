@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>Malware Analysis</title>
+        {% load static %}
+         <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+        <!-- <script src="js/script.js"></script> -->
+    </head>
+    <body>
+        <div class="container">
+        	<button id="back" onclick="goBack()">Go Back</button>
+
+				
+			{% if response.twitter or response.github%}
+            <div id="table_responsive">
+                <table>
+                    <tr>
+                        <th>URL</th>
+                        <th>Verdict</th>
+                    </tr>
+                {% for question in response.twitter %}
+                    <tr>
+                        <td class="url_text">{{ question.url }}</td>
+                        <td class="answer_sql">{{ question.verdict}}</td>
+                    </tr>
+                {% endfor %}
+                {% for question in response.github %}
+                    <tr>
+                        <td class="url_text">{{ question.file }}</td>
+                        <td class="answer_sql">{{ question.verdict}}</td>
+                    </tr>
+                {% endfor %}
+                </table>
+            </div>
+        {% endif %}
+			
+
+        </div>
+
+
+		     <script>
+		function goBack() {
+		    window.history.back();
+		}
+		</script>
+    </body>
+</html>

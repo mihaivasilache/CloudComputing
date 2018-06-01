@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>Malware Analysis</title>
+        
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'polls/static/polls/style.css' %}">
+        <!-- <script src="js/script.js"></script> -->
+    </head>
+    <body>
+        <div class="container">
+            
+            <header>
+            
+                <h1>Please use a <strong>Twitter</strong> or a <strong>GitHub</strong> account.</h1>
+                
+            </header>
+            
+            <section class="main">
+                <!-- <form class="formulmeu" action="interfata_form"> -->
+                <form class="formulmeu" action="{% url 'polls:get_results' %}" method="post">
+                    <p class="field">
+                        <input type="text" name="twitter" placeholder="Twitter account">
+                        <i class="icon-user"></i>
+                    </p>
+                    <p>OR</p><br>
+                        <p class="field">
+                            <input type="text" name="github" placeholder="Github account">
+                            <i class="icon-github"></i>
+                    </p>
+                    <p class="submit">
+                        <button type="submit" name="submit" id="start_loading" onclick="myFunction()"><i class="icon-arrow-right"></i></button>
+                    </p>
+                </form>
+            </section>
+
+            <div class="bar" id="loading" style="display:none;">
+                <i class="sphere"></i>
+            </div>
+
+        </div>
+
+
+      <script>
+            function myFunction() {
+              document.getElementById("loading").style.display='block';
+            }
+        </script>
+
+    </body>
+</html>
